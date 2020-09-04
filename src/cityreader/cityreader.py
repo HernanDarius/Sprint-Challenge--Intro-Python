@@ -45,7 +45,7 @@ def cityreader(cities=[]):
     merged_complete = [(merged_name_lat[i], lon[i]) for i in range(0, len(merged_name_lat))]
 
     for i in merged_complete:
-      cities.append(City(i))
+      cities.append(City(i[0], i[1], i[2]))
 
     return cities
 
