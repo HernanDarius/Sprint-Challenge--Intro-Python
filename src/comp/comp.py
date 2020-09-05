@@ -62,8 +62,7 @@ print(e)
 # age, for example ("David", 31), for everyone between the ages of 27 and 32,
 # inclusive.
 print("Names and ages between 27 and 32:")
-between = human.age in range(27, 33)
-f = [(human.name, human.age) for human in humans if between == True]
+f = [(human.name, human.age) for human in humans if human.age in range(27,33)]
 
 print(f)
 
@@ -73,7 +72,7 @@ print(f)
 print("All names uppercase:")
 
 human_other = humans.copy()
-g = [human.name.upper() and human.age + 5 for human in human_other]
+g = [Human(human.name.upper(), human.age+5) for human in humans]
 
 print(g)
 
