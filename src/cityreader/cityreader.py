@@ -36,16 +36,7 @@ def cityreader(cities=[]):
 
   with open('cities.csv', 'r') as city:
     reader = csv.reader(city)
-    for row in reader:
-      name.append(row[0])
-      lat.append(row[3])
-      lon.append(row[4])
-
-    merged_name_lat = [(name[i], float(lat[i])) for i in range(0, len(name))] 
-    merged_complete = [(merged_name_lat[i], float(lon[i])) for i in range(0, len(merged_name_lat))]
-
-    for i in merged_complete:
-      cities.append(City(i[0][0], i[0][1], i[1]))
+    cities = [City(row[0], float(row[3]), float(row[4])) for i, row in enumerate(reader) if i > 0]
 
     return cities
 
