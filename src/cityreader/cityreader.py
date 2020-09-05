@@ -38,8 +38,8 @@ def cityreader(cities=[]):
     reader = csv.reader(city)
     for row in reader:
       name.append(row[0])
-      lat.append(row[3])
-      lon.append(row[4])
+      lat.append(float(row[3]))
+      lon.append(float(row[4]))
 
     merged_name_lat = [(name[i], lat[i]) for i in range(0, len(name))] 
     merged_complete = [(merged_name_lat[i], lon[i]) for i in range(0, len(merged_name_lat))]
