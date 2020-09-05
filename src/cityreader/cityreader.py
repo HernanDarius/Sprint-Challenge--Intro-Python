@@ -30,9 +30,6 @@ class City:
 
 
 def cityreader(cities=[]):
-  name = []
-  lat = []
-  lon = []
 
   with open('cities.csv', 'r') as city:
     reader = csv.reader(city)
